@@ -1,12 +1,12 @@
 # ✈️ RayAI — Smart Flight Pricing
 
-!Python !Streamlit !XGBoost !SHAP !Plotly !Pandas !Scikit-learn !ReportLab
+<p align="center"> <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"> <img src="https://img.shields.io/badge/XGBoost-Regression-189F5B?style=for-the-badge" alt="XGBoost"> <img src="https://img.shields.io/badge/SHAP-ExplainableAI-7B2CBF?style=for-the-badge" alt="SHAP"> <img src="https://img.shields.io/badge/Plotly-InteractiveCharts-3F4F75?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly"> <img src="https://img.shields.io/badge/Pandas-DataProcessing-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"> <img src="https://img.shields.io/badge/Scikit--learn-Preprocessing-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="Scikit-learn"> <img src="https://img.shields.io/badge/ReportLab-PDFReports-B22222?style=for-the-badge" alt="ReportLab"> </p>
 
-**Predict flight fares. Compare scenarios. Understand AI predictions.**
+<p align="center"> <strong>Predict flight fares. Compare scenarios. Understand AI predictions.</strong> </p>
 
-An interactive flight price prediction application built with **Python, Streamlit, XGBoost, SHAP, and Plotly.**
+<p align="center"> An interactive flight price prediction application built with <strong>Python, Streamlit, XGBoost, SHAP, and Plotly.</strong> </p>
 
-Overview • Features • Architecture • Machine Learning • SHAP Explainability • Installation • Usage
+<p align="center"> <a href="#-overview">Overview</a> • <a href="#-features">Features</a> • <a href="#-architecture">Architecture</a> • <a href="#-machine-learning-pipeline">Machine Learning</a> • <a href="#-shap-explainability">SHAP</a> • <a href="#-installation">Installation</a> • <a href="#️-usage">Usage</a> </p>
 
 ## 📌 Overview
 
