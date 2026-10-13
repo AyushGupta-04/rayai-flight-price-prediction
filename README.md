@@ -1,14 +1,15 @@
 ✈️ RayAI — Smart Flight Pricing
 AI-Powered Flight Fare Prediction, Scenario Analysis & Explainable Machine Learning
 
-<p align="center"> An interactive machine learning dashboard that predicts flight ticket prices using XGBoost Regression, explores alternative booking scenarios, and explains predictions using SHAP. </p>
+An interactive machine learning dashboard that predicts flight ticket prices using XGBoost Regression, explores alternative booking scenarios, and explains predictions using SHAP.
 
-<p align="center"> <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"> <img src="https://img.shields.io/badge/XGBoost-Regression-16A34A?style=for-the-badge" alt="XGBoost"> <img src="https://img.shields.io/badge/SHAP-Explainable%20AI-8B5CF6?style=for-the-badge" alt="SHAP"> </p>
+<p align="center"> <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> <img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"> <img alt="XGBoost" src="https://img.shields.io/badge/XGBoost-189F5B?style=for-the-badge"> <img alt="SHAP" src="https://img.shields.io/badge/Explainable_AI-SHAP-7B2CBF?style=for-the-badge"> </p>
 
-<p align="center"> <b>Predict · Compare · Explain</b> </p>
+<p align="center"> <strong>Predict · Compare · Explain</strong> </p>
 
 📌 Table of Contents
 Overview
+Project Objectives
 Key Features
 Dashboard Modules
 System Architecture
@@ -25,6 +26,7 @@ Limitations
 Future Enhancements
 Contributing
 License
+Disclaimer
 🌟 Overview
 
 RayAI — Smart Flight Pricing is an interactive machine learning application designed to estimate flight ticket prices based on flight characteristics and booking information.
@@ -46,34 +48,34 @@ Generate downloadable PDF prediction reports.
 🚀 Key Features
 Feature	Description
 ✈️ Flight Price Prediction	Estimates ticket prices using a trained XGBoost regression model.
-🔬 What-If Simulator	Explores alternative scenarios by changing one flight parameter at a time.
+🔬 What-If Simulator	Explores alternative scenarios by changing flight parameters.
 ⚖️ Flight Comparison	Compares the predicted prices of three flight configurations.
-🧠 SHAP Explainability	Shows which processed features push a prediction higher or lower.
-📈 Interactive Visualizations	Displays price comparisons across booking windows, classes, stops, and airlines.
-📄 PDF Reports	Downloads a report containing flight details, the estimated fare, and leading SHAP factors.
+🧠 SHAP Explainability	Identifies features that push predictions higher or lower.
+📈 Interactive Visualizations	Displays model-generated price comparisons across booking windows, classes, stops, and airlines.
+📄 PDF Reports	Downloads reports containing flight details, estimated fares, and leading SHAP factors.
 ⚙️ Feature Engineering	Generates route, booking-window, duration-category, and combined categorical features.
-🎨 Modern Dashboard	Provides a dark-themed, animated, tab-based interface using Streamlit and custom CSS.
+🎨 Interactive Dashboard	Provides a dark-themed, tab-based Streamlit interface.
 🖥️ Dashboard Modules
-1. ✈️ Prediction
+✈️ 1. Flight Price Prediction
 
-Enter flight details to generate a price estimate.
+Enter flight details to generate a predicted ticket price.
 
 The dashboard displays:
 
 Estimated fare in Indian Rupees (INR).
 Route and flight summary.
-Duration and booking-window information.
+Flight duration and booking-window information.
 SHAP feature contribution chart.
-Price versus days before departure.
+Predicted price versus days before departure.
 Predicted price by travel class and number of stops.
 Engineered input features.
-2. 🔬 What-If Simulator
+🔬 2. What-If Simulator
 
-Explore how model predictions change when one parameter is varied.
+Explore how model predictions change when individual flight parameters are varied.
 
-Supported parameters:
+Supported parameters include:
 
-Days before departure.
+Days remaining before departure.
 Travel class.
 Number of stops.
 Flight duration.
@@ -81,15 +83,15 @@ Airline.
 
 The simulator generates alternative predictions while keeping the other baseline flight characteristics fixed.
 
-3. ⚖️ Flight Comparison
+⚖️ 3. Flight Comparison
 
 Configure three flight scenarios using a shared source city, destination city, and departure-time category.
 
 Compare their predicted prices through an interactive bar chart and a detailed comparison table.
 
-4. 📄 Prediction Report
+📄 4. Prediction Report
 
-Download a PDF report after generating a prediction in the Prediction tab.
+Generate and download a PDF report after generating a prediction in the Prediction tab.
 
 The report includes:
 
@@ -98,13 +100,13 @@ Selected flight details.
 Route and booking-window information.
 Top seven SHAP feature contributions.
 A disclaimer explaining that the prediction is an estimate.
-5. 🤖 Model Information
+🤖 5. Model Information
 
 Review the configured XGBoost parameters, reported evaluation metrics, preprocessing pipeline, model artifacts, and SHAP interpretation guidance.
 
 🏗️ System Architecture
 
-The following diagram illustrates how the dashboard, preprocessing pipeline, prediction model, explanation engine, visualizations, and PDF reporting functionality interact.
+The following diagram illustrates how the dashboard, feature engineering, preprocessing pipeline, prediction model, explainability engine, visualizations, and PDF reporting functionality interact.
 
 flowchart TD
     A(["👤 User"]) --> B["Streamlit Dashboard"]
@@ -151,17 +153,17 @@ flowchart TD
 Architecture Components
 Component	Responsibility
 Presentation Layer	Collects user inputs and displays prediction results through Streamlit.
-Feature Engineering Layer	Creates additional features from the selected flight characteristics.
+Feature Engineering Layer	Creates additional features from selected flight characteristics.
 Preprocessing Layer	Transforms the input using the saved preprocessing pipeline.
 Prediction Layer	Generates fare estimates using the trained XGBoost model.
 Explainability Layer	Uses SHAP to calculate feature contributions for individual predictions.
 Analytics Layer	Generates interactive charts and alternative scenario comparisons.
-Reporting Layer	Creates a downloadable PDF using ReportLab.
+Reporting Layer	Creates downloadable PDF reports using ReportLab.
 🔄 End-to-End ML Flowchart
 
-This flowchart describes the prediction process, from user input to the final dashboard results and optional PDF export.
+This flowchart describes the prediction process, from application initialization to the final dashboard results and optional PDF export.
 
-Note: The preprocessing pipeline and XGBoost model are loaded from saved artifacts when the application initializes. They are reused for subsequent predictions.
+Note: The preprocessing pipeline and XGBoost model are loaded from saved artifacts when the application initializes and reused for subsequent predictions.
 
 flowchart TD
     A(["Start Application"]) --> B["Load Saved Artifacts"]
@@ -182,7 +184,7 @@ flowchart TD
     J --> K["Apply Non-Negative Price Constraint"]
 
     K --> L["Calculate SHAP Values"]
-    L --> M["Save Results in Session State"]
+    L --> M["Store Prediction and Input Data"]
 
     M --> N["Display Predicted Fare"]
     N --> O["Render Charts and Explanations"]
@@ -193,6 +195,7 @@ flowchart TD
     Q --> R(["Download Report"])
 
     P -- No --> S(["Continue Exploring Dashboard"])
+
     R --> S
 
     classDef start fill:#166534,stroke:#4ade80,color:#ffffff
@@ -213,7 +216,7 @@ The application accepts the following input features:
 
 Input	Description
 Airline	Selected airline category.
-Source City	Departure city.
+Source City	City of departure.
 Destination City	Arrival city.
 Departure Time	Departure-time category.
 Arrival Time	Arrival-time category.
@@ -221,18 +224,16 @@ Stops	Number-of-stops category.
 Class	Economy or Business.
 Duration	Flight duration in hours.
 Days Left	Number of days remaining before departure.
-
-The prediction pipeline follows these steps:
-
+Prediction Pipeline
 Collect the selected flight characteristics.
 Derive additional features using the application's feature-engineering functions.
 Construct a Pandas DataFrame with the expected input columns.
-Transform the DataFrame using the saved preprocessor.
+Transform the DataFrame using the saved preprocessing pipeline.
 Pass the transformed features to the XGBoost regressor.
 Constrain the returned prediction to a non-negative value.
 Calculate SHAP values to explain the individual prediction.
-Display the results and generate interactive visualizations.
-Create a PDF report when requested.
+Display the predicted fare, charts, and explanations.
+Generate a PDF report when requested.
 🧪 Feature Engineering
 
 RayAI derives additional features before applying the saved preprocessing pipeline.
@@ -253,7 +254,7 @@ Days Before Departure	Category
 16–30 days	Medium
 31–60 days	Early
 More than 60 days	Very_Early
-Duration Categories
+Flight Duration Categories
 Flight Duration	Category
 Up to 2 hours	Short
 More than 2, up to 5 hours	Medium
@@ -261,7 +262,7 @@ More than 5, up to 8 hours	Long
 More than 8, up to 12 hours	Very_Long
 More than 12 hours	Ultra_Long
 
-These features enable the model to use both numerical and categorical characteristics of a flight.
+These engineered features allow the model to use both numerical and categorical characteristics of a flight.
 
 🛠️ Technology Stack
 Technology	Purpose
@@ -290,9 +291,7 @@ Understanding the Metrics
 MAE: Measures the average absolute difference between actual and predicted prices.
 RMSE: Measures prediction error while penalizing larger errors more strongly.
 R² Score: Measures the proportion of target variance explained by the model relative to a mean-prediction baseline.
-
-Important: These values are configured in the dashboard source code. Verify them against the actual evaluation results before presenting them as independently validated model performance.
-
+Important: These values are configured in the dashboard source code. Verify them against the actual model evaluation results before presenting them as independently validated performance.
 📂 Project Structure
 RayAI-Smart-Flight-Pricing/
 │
@@ -307,6 +306,7 @@ RayAI-Smart-Flight-Pricing/
 ├── .gitignore
 └── LICENSE
 
+File Descriptions
 File or Directory	Purpose
 app.py	Main Streamlit application.
 artifacts/preprocessor.joblib	Saved preprocessing pipeline.
@@ -320,7 +320,10 @@ The trained artifacts are required to run the application. Include them in the r
 
 💻 Installation and Setup
 Prerequisites
-Python installed on your system.
+
+Ensure the following are installed on your system:
+
+Python.
 pip package manager.
 Git.
 The trained preprocessing and model artifacts.
@@ -368,7 +371,7 @@ For reproducible deployments, test the application and pin compatible dependency
 
 Step 4: Verify the Model Artifacts
 
-Ensure that both files exist at the expected locations:
+Ensure both files exist at the expected locations:
 
 artifacts/preprocessor.joblib
 artifacts/flight_price_xgb.json
@@ -417,7 +420,7 @@ Categorical input values must be compatible with the preprocessing pipeline.
 What-if scenarios are model-generated estimates, not verified market prices.
 The application does not fetch live airline fares or real-time booking availability.
 Model metrics should be checked against the original evaluation dataset.
-The supported airlines and cities are restricted to the options defined in the application.
+Supported airlines and cities are restricted to the options defined in the application.
 Flight routes are represented using selected city names rather than a live airport-routing service.
 🔮 Future Enhancements
 
@@ -441,10 +444,10 @@ Fork this repository.
 Create a feature branch.
 Implement your changes.
 Test the application.
-Submit a pull request describing your changes.
+Submit a pull request describing your contribution.
 📜 License
 
-Add a LICENSE file if you intend to distribute this project under an open-source license.
+Add a LICENSE file if you intend to distribute the project under an open-source license.
 
 Ensure that you have the appropriate rights to redistribute any included datasets, trained models, and other project artifacts.
 
@@ -454,4 +457,8 @@ RayAI is a machine learning demonstration and analytical tool. All predicted pri
 
 Always verify actual prices with airlines or authorized travel booking providers before making a purchase.
 
-<p align="center"> <b>✈️ RayAI — Smart Flight Pricing</b> <br> Predict. Compare. Explain. <br><br> Built with Python · Streamlit · XGBoost · Plotly · SHAP </p>
+<p align="center"> <strong>✈️ RayAI — Smart Flight Pricing</strong> </p>
+
+<p align="center"> Predict. Compare. Explain. </p>
+
+<p align="center"> Built with Python · Streamlit · XGBoost · Plotly · SHAP </p>
